@@ -28,6 +28,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent);
         }
 
+        Job_Button.setOnClickListener {
+            val intent = Intent(this, Job_seeker_Page::class.java)
+            startActivity(intent);
+        }
+
+
         ObjectAnimator.ofFloat(logoView,"alpha",1f).apply {
             duration = 1000
             start()
