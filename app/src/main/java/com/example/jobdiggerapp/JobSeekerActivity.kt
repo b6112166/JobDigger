@@ -6,7 +6,7 @@ import android.widget.Button
 import android.widget.Toast
 
 
-class Job_seeker_Page : AppCompatActivity() {
+class JobSeekerActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
