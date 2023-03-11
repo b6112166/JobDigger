@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "206033825720",
+    "project_id": "jobdigger-5ef70",
+    "storage_bucket": "jobdigger-5ef70.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:206033825720:android:7b6745935d027aaf5ce94d",
+        "android_client_info": {
+          "package_name": "com.Team.jobdigger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "206033825720-5r68ch8fr843s23p3e5ps569qf137vet.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkkizc5_pzwIM8sWm7UyvWZoRTsibJLlI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "206033825720-5r68ch8fr843s23p3e5ps569qf137vet.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:206033825720:android:ae117269835501645ce94d",
+        "android_client_info": {
+          "package_name": "com.example.jobdiggerapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "206033825720-5r68ch8fr843s23p3e5ps569qf137vet.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkkizc5_pzwIM8sWm7UyvWZoRTsibJLlI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "206033825720-5r68ch8fr843s23p3e5ps569qf137vet.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

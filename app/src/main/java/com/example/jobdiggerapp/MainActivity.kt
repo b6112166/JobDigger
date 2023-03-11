@@ -3,12 +3,12 @@ package com.example.jobdiggerapp
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.ObjectAnimator
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.TextView
-import androidx.core.view.allViews
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +21,12 @@ class MainActivity : AppCompatActivity() {
         val logoView = findViewById<ImageView>(R.id.logoImg)
         val roleSelectionLinearLayout = findViewById<LinearLayout>(R.id.roleSelectionLinearLayout)
 
-        
+        val Job_Button = findViewById(R.id.jobFinderBtn) as Button
+
+        Job_Button.setOnClickListener {
+            val intent = Intent(this, Job_seeker_Page::class.java)
+            startActivity(intent);
+        }
 
         ObjectAnimator.ofFloat(logoView,"alpha",1f).apply {
             duration = 1000
@@ -44,7 +49,6 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-
 }
 
 
