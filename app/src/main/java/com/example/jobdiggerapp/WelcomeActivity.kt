@@ -30,10 +30,17 @@ class WelcomeActivity : AppCompatActivity() {
             start()
             addListener(object : AnimatorListenerAdapter(){
                 override fun onAnimationEnd(animation: Animator) {
-                    roleSelectionLinearLayout.visibility = View.VISIBLE
-                    logoView.animate().translationY(-700f).duration = 500;
-                    roleSelectionLinearLayout.animate().alpha(1f).duration = 1500;
-                }
+                    roleSelectionLinearLayout.visibility = View.VISIBLE;
+                    logoView.animate().translationY(-700f).duration = 500
+                    roleSelectionLinearLayout.animate().alpha(1f).duration = 1500
+
+
+
+
+                    }
+
+
+
             })
         }
     }
