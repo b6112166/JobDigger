@@ -10,13 +10,53 @@
         android:id="@+id/logoImg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:alpha="11"
+        android:alpha="0"
         android:contentDescription="@string/app_name"
         android:cropToPadding="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498"
+        app:layout_constraintVertical_bias="0.51"
         app:srcCompat="@drawable/screenshot_350_nobackground" />
+
+    <LinearLayout
+        android:id="@+id/roleSelectionLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="0"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/introPhrase1TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Are you a" />
+
+        <Button
+            android:id="@+id/jobFinderBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="1"
+            android:text="Job Finder" />
+
+        <TextView
+            android:id="@+id/introPhrase2TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OR" />
+
+        <Button
+            android:id="@+id/recruiterBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recruiter" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
