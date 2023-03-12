@@ -13,6 +13,8 @@ private lateinit var viewPager2 : ViewPager2
 private lateinit var handler : Handler
 private lateinit var candidateList : ArrayList<Int>
 private lateinit var candidateAdapter : CandidateAdapter
+private lateinit var jobSelection : String
+private lateinit var skillSelected : ArrayList<String>
 
 class CandidateActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,8 +28,8 @@ class CandidateActivity : AppCompatActivity() {
 
     private fun grabExtraData() {
         val intent = intent
-        val jobSelection = intent.getStringExtra("jobSelection")
-        val skillSelection = intent.getStringArrayListExtra("SkillList")
+        jobSelection = intent.getStringExtra("jobSelection").toString()
+        skillSelected = intent.getStringArrayListExtra("SkillList") as ArrayList<String>
     }
 
     private fun makeListOfCandidates() {
@@ -43,7 +45,7 @@ class CandidateActivity : AppCompatActivity() {
         candidateList.add(4)  // DELETE THIS
         candidateList.add(5)  // DELETE THIS
 
-        // Adpater Settings
+        // Adapter Settings
         candidateAdapter = CandidateAdapter(this, candidateList)
         viewPager2.adapter = candidateAdapter
         viewPager2.offscreenPageLimit = 3
