@@ -3,14 +3,13 @@ package com.example.jobdiggerapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Layout
 import android.view.View
-import android.widget.AbsListView.RecyclerListener
 import android.widget.AutoCompleteTextView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
+import android.widget.ListView
 import android.widget.ProgressBar
 import androidx.recyclerview.widget.RecyclerView
 
@@ -21,7 +20,7 @@ class RecruiterActivity : AppCompatActivity() {
     private var skillList = ArrayList<String>()
 
     private var jobSelection = String();
-    private var skillSelection = ArrayList<String>();
+    private var selectedSkills = ArrayList<String>();
 
     private var yearsOfExperience = String();
 
@@ -36,6 +35,12 @@ class RecruiterActivity : AppCompatActivity() {
 
     private lateinit var submitButton:Button
 
+    private lateinit var skillAddButton:Button
+
+
+    private lateinit var selectedSkillArrayAdapter:ArrayAdapter<String>
+
+
     private lateinit var skillListArrayAdapter:ArrayAdapter<String>
     private lateinit var jobTitleListArrayAdapter:ArrayAdapter<String>
     //
@@ -43,7 +48,7 @@ class RecruiterActivity : AppCompatActivity() {
     private lateinit var programmerAutoCompleteTextView:AutoCompleteTextView
     private lateinit var skillSearchAutoCompleteTextView:AutoCompleteTextView
     private lateinit var yearsOfExperienceEditText:EditText
-    private lateinit var selectedSkillListRecyclerView:RecyclerView
+    private lateinit var selectedSkillListView:ListView
 
 
 
@@ -77,7 +82,9 @@ class RecruiterActivity : AppCompatActivity() {
 
         yearsOfExperienceEditText = findViewById<EditText>(R.id.yearsOfExperienceEditText)
 
-        selectedSkillListRecyclerView = findViewById<RecyclerView>(R.id.selectedSkillListRecyclerView)
+        selectedSkillListView = findViewById<ListView>(R.id.selectedSkillListView)
+        selectedSkillArrayAdapter = ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,selectedSkills)
+        selectedSkillListView.adapter = selectedSkillArrayAdapter
 
     }
 
@@ -115,6 +122,15 @@ class RecruiterActivity : AppCompatActivity() {
             updateButtonVisibility()
         }
 
+        skillAddButton = findViewById<Button>(R.id.skillSearchAddButton)
+        skillAddButton.setOnClickListener(){
+            val skill = skillSearchAutoCompleteTextView.text.toString()
+            selectedSkills.add(skill)
+            selectedSkillArrayAdapter.notifyDataSetChanged()
+
+
+        }
+
         submitButton.setOnClickListener(){
             //send data to the next activity
             jobSelection = programmerAutoCompleteTextView.text.toString()
@@ -127,7 +143,7 @@ class RecruiterActivity : AppCompatActivity() {
 
             bundle.putString("jobSelection",jobSelection)
 
-            bundle.putSerializable("SkillList",(Serializable)skillSelection)
+            bundle.putSerializable("SkillList",(Serializable)selectedSkills)
 
             intent.putExtras(bundle)
 

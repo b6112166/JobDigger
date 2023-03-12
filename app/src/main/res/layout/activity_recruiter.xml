@@ -117,10 +117,18 @@
             android:hint="search skills"
             android:inputType="text" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/selectedSkillListRecyclerView"
+        <Button
+            android:id="@+id/skillSearchAddButton"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content"
+            android:text="Add" />
+
+        <ListView
+            android:id="@+id/selectedSkillListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            
+            />
 
     </LinearLayout>
 
