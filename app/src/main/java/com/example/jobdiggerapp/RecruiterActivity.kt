@@ -1,6 +1,7 @@
 package com.example.jobdiggerapp
 
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -12,6 +13,8 @@ import android.widget.LinearLayout
 import android.widget.ListView
 import android.widget.ProgressBar
 import androidx.recyclerview.widget.RecyclerView
+import com.example.jobdiggerapp.listOfCandidateActivity.CandidateActivity
+import java.io.Serializable
 
 
 class RecruiterActivity : AppCompatActivity() {
@@ -135,10 +138,7 @@ class RecruiterActivity : AppCompatActivity() {
             val intent = Intent(this, CandidateActivity::class.java)
             var bundle = Bundle()
             bundle.putString("jobSelection",jobSelection)
-
-            bundle.putSerializable("SkillList",(Serializable)selectedSkills)
-
-            bundle.putStringArrayList("SkillList", skillSelection)
+            bundle.putStringArrayList("SkillList", selectedSkills)
             intent.putExtras(bundle)
             startActivity(intent);
         }
