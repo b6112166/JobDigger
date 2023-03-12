@@ -39,20 +39,20 @@
             android:text="Are you a" />
 
         <Button
-            android:id="@+id/jobFinderBtn"
+            android:id="@+id/jobSeekerButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="1"
-            android:text="Job Finder" />
+            android:text="Job Seeker" />
 
         <TextView
             android:id="@+id/introPhrase2TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="OR" />
+            android:text="or" />
 
         <Button
-            android:id="@+id/recruiterBtn"
+            android:id="@+id/recruiterButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Recruiter" />

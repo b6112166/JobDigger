@@ -19,7 +19,7 @@ class JobSeekerActivity : AppCompatActivity() {
         submitButton.apply {
             text = "Submit"
             textSize = 20f
-            id = R.id.submit1
+            id = R.id.submitButton
         }
 
 
