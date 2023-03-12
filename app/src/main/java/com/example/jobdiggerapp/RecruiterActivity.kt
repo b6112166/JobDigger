@@ -113,12 +113,8 @@ class RecruiterActivity : AppCompatActivity() {
 
             currentQuestionNumber++;
 
-            //update current layout
             updateCurrentLayout()
-
-            //update progress bar
             updateProgressBar()
-            //update button visibility
             updateButtonVisibility()
         }
 
@@ -136,33 +132,23 @@ class RecruiterActivity : AppCompatActivity() {
             jobSelection = programmerAutoCompleteTextView.text.toString()
             yearsOfExperience = yearsOfExperienceEditText.text.toString()
 
-            /*
-            Intent intent = Intent(this,CandidateActivity::class.java)
-
+            val intent = Intent(this, CandidateActivity::class.java)
             var bundle = Bundle()
-
             bundle.putString("jobSelection",jobSelection)
 
             bundle.putSerializable("SkillList",(Serializable)selectedSkills)
 
+            bundle.putStringArrayList("SkillList", skillSelection)
             intent.putExtras(bundle)
-
             startActivity(intent);
-
-             */
-
         }
 
         backButton.setOnClickListener(){
             currentQuestionNumber--;
 
             updateCurrentLayout()
-
-            //update progress bar
             updateProgressBar()
-
             updateButtonVisibility()
-
         }
     }
 

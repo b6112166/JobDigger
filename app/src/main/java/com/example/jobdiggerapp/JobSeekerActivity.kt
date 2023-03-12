@@ -23,9 +23,9 @@ class JobSeekerActivity : AppCompatActivity() {
         }
 
 
-        submitButton.setOnClickListener({
+        submitButton.setOnClickListener {
             Toast.makeText(this, "you clicked me.", Toast.LENGTH_SHORT).show();
-        })
+        }
     }
 
 

@@ -29,33 +29,48 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.656">
 
         <TextView
             android:id="@+id/introPhrase1TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Are you a" />
+            android:layout_width="271dp"
+            android:layout_height="102dp"
+            android:gravity="center|bottom"
+            android:paddingBottom="20dp"
+            android:text="Are you a"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/jobSeekerButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="271dp"
+            android:layout_height="102dp"
             android:alpha="1"
-            android:text="Job Seeker" />
+            android:backgroundTint="#91DD67"
+            android:text="Job Seeker"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/introPhrase2TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="or" />
+            android:layout_width="271dp"
+            android:layout_height="102dp"
+            android:gravity="center"
+            android:text="or"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/recruiterButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Recruiter" />
+            android:layout_width="271dp"
+            android:layout_height="102dp"
+            android:backgroundTint="#91DD67"
+            android:text="Recruiter"
+            android:textSize="20sp" />
 
     </LinearLayout>
 
