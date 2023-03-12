@@ -1,6 +1,7 @@
 package com.example.jobdiggerapp
 
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Layout
@@ -13,6 +14,8 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import androidx.recyclerview.widget.RecyclerView
+import com.example.jobdiggerapp.listOfCandidateActivity.CandidateActivity
+import java.io.Serializable
 
 
 class RecruiterActivity : AppCompatActivity() {
@@ -38,7 +41,7 @@ class RecruiterActivity : AppCompatActivity() {
 
     private lateinit var skillListArrayAdapter:ArrayAdapter<String>
     private lateinit var jobTitleListArrayAdapter:ArrayAdapter<String>
-    //
+
 
     private lateinit var programmerAutoCompleteTextView:AutoCompleteTextView
     private lateinit var skillSearchAutoCompleteTextView:AutoCompleteTextView
@@ -106,12 +109,8 @@ class RecruiterActivity : AppCompatActivity() {
 
             currentQuestionNumber++;
 
-            //update current layout
             updateCurrentLayout()
-
-            //update progress bar
             updateProgressBar()
-            //update button visibility
             updateButtonVisibility()
         }
 
@@ -119,34 +118,23 @@ class RecruiterActivity : AppCompatActivity() {
             //send data to the next activity
             jobSelection = programmerAutoCompleteTextView.text.toString()
             yearsOfExperience = yearsOfExperienceEditText.text.toString()
+            skillSelection.add("4")
+            skillSelection.add("5")
 
-            /*
-            Intent intent = Intent(this,CandidateActivity::class.java)
-
+            val intent = Intent(this, CandidateActivity::class.java)
             var bundle = Bundle()
-
             bundle.putString("jobSelection",jobSelection)
-
-            bundle.putSerializable("SkillList",(Serializable)skillSelection)
-
+            bundle.putStringArrayList("SkillList", skillSelection)
             intent.putExtras(bundle)
-
             startActivity(intent);
-
-             */
-
         }
 
         backButton.setOnClickListener(){
             currentQuestionNumber--;
 
             updateCurrentLayout()
-
-            //update progress bar
             updateProgressBar()
-
             updateButtonVisibility()
-
         }
     }
 

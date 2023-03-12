@@ -11,9 +11,10 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
+
 import androidx.appcompat.app.AppCompatDelegate
 
-class WelcomeActivity : AppCompatActivity() {
+class WelcomeActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_welcome)
@@ -21,8 +22,6 @@ class WelcomeActivity : AppCompatActivity() {
 
         setupBeginningAnimation()
         setupRoleSelectionButtons()
-
-
     }
 
     private fun setupBeginningAnimation(){
