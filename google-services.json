@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "810712754202",
+    "project_id": "testdb-135a7",
+    "storage_bucket": "testdb-135a7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810712754202:android:9691009a2f23a6e906c9a3",
+        "android_client_info": {
+          "package_name": "com.example.jobdiggerapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "810712754202-4gqfhchq2sj5r17b0bdcp8j4a50c489q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBg3FU7u-ZNgzAOamMB_h92LCMpsemX-lg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "810712754202-4gqfhchq2sj5r17b0bdcp8j4a50c489q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

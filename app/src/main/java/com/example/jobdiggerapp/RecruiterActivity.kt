@@ -12,19 +12,21 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.ListView
 import android.widget.ProgressBar
-import androidx.recyclerview.widget.RecyclerView
 import com.example.jobdiggerapp.listOfCandidateActivity.CandidateActivity
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
+
 import java.io.Serializable
 
 
 class RecruiterActivity : AppCompatActivity() {
-    //lists to load items from the database
+    //lists to load items from the database for autocomplete
     private var jobTitleList = ArrayList<String>()
     private var skillList = ArrayList<String>()
 
     private var jobSelection = String();
-    private var selectedSkills = ArrayList<String>();
-
+    private var selectedSkills = ArrayList<String>()
     private var yearsOfExperience = String();
 
     private var layoutArray = ArrayList<LinearLayout>();//stores different linear layouts for displayed layout switching
@@ -35,18 +37,12 @@ class RecruiterActivity : AppCompatActivity() {
 
     private lateinit var nextButton:Button
     private lateinit var backButton:Button
-
     private lateinit var submitButton:Button
-
     private lateinit var skillAddButton:Button
 
-
     private lateinit var selectedSkillArrayAdapter:ArrayAdapter<String>
-
-
     private lateinit var skillListArrayAdapter:ArrayAdapter<String>
     private lateinit var jobTitleListArrayAdapter:ArrayAdapter<String>
-    //
 
     private lateinit var programmerAutoCompleteTextView:AutoCompleteTextView
     private lateinit var skillSearchAutoCompleteTextView:AutoCompleteTextView
@@ -68,6 +64,7 @@ class RecruiterActivity : AppCompatActivity() {
         setupInternalButtons()
 
     }
+
 
 
 
@@ -121,6 +118,14 @@ class RecruiterActivity : AppCompatActivity() {
             updateButtonVisibility()
         }
 
+        backButton.setOnClickListener(){
+            currentQuestionNumber--
+
+            updateCurrentLayout()
+            updateProgressBar()
+            updateButtonVisibility()
+        }
+
         skillAddButton = findViewById<Button>(R.id.skillSearchAddButton)
         skillAddButton.setOnClickListener(){
             val skill = skillSearchAutoCompleteTextView.text.toString()
@@ -140,16 +145,10 @@ class RecruiterActivity : AppCompatActivity() {
             bundle.putString("jobSelection",jobSelection)
             bundle.putStringArrayList("SkillList", selectedSkills)
             intent.putExtras(bundle)
-            startActivity(intent);
+            startActivity(intent)
         }
 
-        backButton.setOnClickListener(){
-            currentQuestionNumber--;
 
-            updateCurrentLayout()
-            updateProgressBar()
-            updateButtonVisibility()
-        }
     }
 
     private fun updateProgressBar(){
@@ -171,19 +170,16 @@ class RecruiterActivity : AppCompatActivity() {
         //hide back button at first page
         if(currentQuestionNumber == 0){
             backButton.visibility = View.INVISIBLE
-
         }
         //hide next button at last page
         else if(currentQuestionNumber ==3){
             nextButton.visibility = View.INVISIBLE
         }
         //enable both for the rest
-
         else{
             backButton.visibility = View.VISIBLE
             nextButton.visibility = View.VISIBLE
         }
-
     }
 }
 
